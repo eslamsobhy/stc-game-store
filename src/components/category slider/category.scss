@@ -1,0 +1,31 @@
+.category {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  box-shadow: 0 0 10px 5px #eee;
+  align-items: center;
+  column-gap: 10px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .item {
+    padding: 5px 20px;
+    font-weight: bold;
+    color: #565656;
+    border: 1.5px solid #d2d2d2;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+}
