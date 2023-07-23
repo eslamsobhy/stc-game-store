@@ -1,7 +1,7 @@
 import React from "react";
 
 // icon
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaStar } from "react-icons/fa";
 
 // styling
 import "./listing.scss";
@@ -25,6 +25,10 @@ const Listing = ({ title, products }) => {
                 <div className="name">{prod.title}</div>
                 <div className="info">{prod.brand}</div>
                 <div className="btn">more info</div>
+                <div className="rating">
+                  <FaStar color="var(--primary-color)" />
+                  {prod.rating}
+                </div>
               </div>
             );
           }
