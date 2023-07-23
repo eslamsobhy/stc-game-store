@@ -1,5 +1,6 @@
 :root {
   --primary-color: #572589;
+  --btn-primary: #ff375e;
 }
 
 * {
@@ -16,4 +17,21 @@ body {
 section.section {
   width: 777px;
   margin: auto;
+}
+
+.btn {
+  background-color: var(--btn-primary);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 7px;
+  border-radius: 3px;
+  margin-top: 10px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff1f4b;
 }

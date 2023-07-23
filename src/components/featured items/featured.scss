@@ -1,0 +1,27 @@
+.featured {
+  margin-top: 40px !important;
+  display: flex;
+  background-color: #fff;
+  column-gap: 30px;
+  //   height: 210px;
+
+  img {
+    width: 65%;
+  }
+
+  .info {
+    padding-top: 20px;
+
+    .name {
+      font-weight: bold;
+      text-transform: capitalize;
+      color: #3c3c3d;
+    }
+
+    .downloads {
+      margin-top: 20px;
+      color: #9d9d9e;
+      font-weight: bold;
+    }
+  }
+}
