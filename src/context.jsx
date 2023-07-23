@@ -7,6 +7,8 @@ const initialState = {
   loading: true,
   category: "all",
   products: [],
+  mostRecommended: [],
+  mostPopular: [],
   categories: [],
 };
 
@@ -26,6 +28,7 @@ export const AppProvider = ({ children }) => {
     await axios.get("https://dummyjson.com/products/categories").then((res) => {
       dispatch({ type: "SET_CATEGORIES", payload: res.data });
     });
+    dispatch({ type: "PREPARE_DATA" });
     dispatch({ type: "DISPLAY_DATA" });
   };
 

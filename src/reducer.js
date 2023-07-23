@@ -8,6 +8,14 @@ const reducer = (state, action) => {
       return { ...state, loading: true };
     case "DISPLAY_DATA":
       return { ...state, loading: false };
+    case "PREPARE_DATA":
+      const mostRec = state.products.products.filter(
+        (prod) => prod.price < 500
+      );
+      const mostPop = state.products.products.filter(
+        (prod) => prod.rating > 4.5
+      );
+      return { ...state, mostRecommended: mostRec, mostPopular: mostPop };
     default:
       return state;
   }
