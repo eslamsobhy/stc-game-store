@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #572589;
+}
+
 body {
   font-family: "tajawal", Arial, Helvetica, sans-serif;
+}
+
+section.section {
+  width: 777px;
+  margin: auto;
 }

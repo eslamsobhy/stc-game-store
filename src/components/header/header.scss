@@ -1,0 +1,32 @@
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+
+      .title {
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+    }
+
+    .actions {
+      display: flex;
+      column-gap: 15px;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+}
