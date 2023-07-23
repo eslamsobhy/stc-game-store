@@ -1,3 +1,8 @@
+@mixin active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
 .category {
   height: 60px;
   width: 100%;
@@ -15,6 +20,9 @@
   }
 
   .item {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
     padding: 5px 20px;
     font-weight: bold;
     color: #565656;
@@ -23,11 +31,23 @@
     transition: all 0.3s ease-in-out;
     flex-shrink: 0;
     width: fit-content;
+    width: -moz-fit-content;
+
+    svg {
+      display: none;
+    }
 
     &:hover {
-      background-color: var(--primary-color);
-      color: #ffffff;
+      @include active;
       cursor: pointer;
+    }
+
+    &.active {
+      @include active;
+
+      svg {
+        display: block;
+      }
     }
   }
 }

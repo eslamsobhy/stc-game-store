@@ -1,5 +1,8 @@
 import React from "react";
 
+// icons
+import { AiOutlineCheck } from "react-icons/ai";
+
 // styling
 import "./category.scss";
 
@@ -13,10 +16,14 @@ const Category = () => {
 
   return (
     <section className="category">
+      <article className="item active" name="all">
+        all <AiOutlineCheck />
+      </article>
       {categories.map((cat, index) => {
         return (
-          <article className="item" key={index}>
+          <article className="item" name={cat} key={index}>
             {cat}
+            <AiOutlineCheck />
           </article>
         );
       })}
