@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 // global state
@@ -8,10 +8,14 @@ import { useGlobalContext } from "../../context";
 import "./details.scss";
 
 const Details = () => {
-  const { getProductById } = useGlobalContext();
+  const { getProductById, products } = useGlobalContext();
   const { id } = useParams();
-  const product = getProductById(id);
-  console.log(product);
+  let product = [];
+
+  useEffect(() => {
+    product = getProductById(id);
+    console.log(product);
+  }, [products]);
 
   return <section className="section details">details</section>;
 };

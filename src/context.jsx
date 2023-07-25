@@ -34,7 +34,7 @@ export const AppProvider = ({ children }) => {
 
   // get product by id
   const getProductById = (id) => {
-    return state.products.products.filter((prod) => prod.id == id);
+    return state.products.products?.filter((prod) => prod.id == id);
   };
 
   return (
