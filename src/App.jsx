@@ -1,17 +1,18 @@
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // components
 import Header from "./components/header/Header";
-import Category from "./components/category slider/Category";
-import Featured from "./components/featured items/Featured";
-import Listing from "./components/listing/Listing";
+
+// Pages
+import Home from "./pages/home/Home";
 
 // global state
 import { useGlobalContext } from "./context";
 
 function App() {
-  const { fetchData, mostRecommended, mostPopular } = useGlobalContext();
+  const { fetchData } = useGlobalContext();
 
   useEffect(() => {
     fetchData();
@@ -20,10 +21,9 @@ function App() {
   return (
     <>
       <Header />
-      <Category />
-      <Featured />
-      <Listing title="Most Recommendation" products={mostRecommended} />
-      <Listing title="Most Popular" products={mostPopular} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   );
 }
