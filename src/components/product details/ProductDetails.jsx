@@ -6,7 +6,16 @@ import "./product-details.scss";
 // icons
 import { IoStar } from "react-icons/io5";
 
+// global context
+import { useGlobalContext } from "../../context";
+
+// components
+import Loading from "../loading/Loading";
+
 const ProductDetails = ({ product }) => {
+  const { loading } = useGlobalContext();
+  if (loading) return <Loading />;
+
   const [prod] = product;
 
   return (

@@ -7,7 +7,17 @@ import { FaChevronRight, FaStar } from "react-icons/fa";
 // styling
 import "./listing.scss";
 
+// components
+import Loading from "../loading/Loading";
+
+// global state
+import { useGlobalContext } from "../../context";
+
 const Listing = ({ title, products }) => {
+  const { loading } = useGlobalContext();
+
+  if (loading) return <Loading />;
+
   return (
     <section className="section listing">
       <div className="header">
