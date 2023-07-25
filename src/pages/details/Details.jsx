@@ -7,17 +7,21 @@ import { useGlobalContext } from "../../context";
 // styling
 import "./details.scss";
 
+// components
+import ProductDetails from "../../components/product details/ProductDetails";
+import Listing from "../../components/listing/Listing";
+
 const Details = () => {
-  const { getProductById, products } = useGlobalContext();
+  const { getProductById, mostRecommended } = useGlobalContext();
   const { id } = useParams();
-  let product = [];
+  const product = getProductById(id);
 
-  useEffect(() => {
-    product = getProductById(id);
-    console.log(product);
-  }, [products]);
-
-  return <section className="section details">details</section>;
+  return (
+    <section className="section details">
+      <ProductDetails product={product} />
+      <Listing title="Most Recommendation" products={mostRecommended} />
+    </section>
+  );
 };
 
 export default Details;
