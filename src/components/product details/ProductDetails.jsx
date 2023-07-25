@@ -14,13 +14,14 @@ import Loading from "../loading/Loading";
 
 const ProductDetails = ({ product }) => {
   const { loading } = useGlobalContext();
-  if (loading) return <Loading />;
-
-  const [prod] = product;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+
+  if (loading) return <Loading />;
+
+  const [prod] = product;
 
   return (
     <section className="product-details">
