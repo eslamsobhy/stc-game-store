@@ -32,8 +32,13 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: "DISPLAY_DATA" });
   };
 
+  // get product by id
+  const getProductById = (id) => {
+    return state.products.products.filter((prod) => prod.id == id);
+  };
+
   return (
-    <AppContext.Provider value={{ ...state, fetchData }}>
+    <AppContext.Provider value={{ ...state, fetchData, getProductById }}>
       {children}
     </AppContext.Provider>
   );

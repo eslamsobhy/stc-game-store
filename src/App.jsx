@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 
 // Pages
 import Home from "./pages/home/Home";
+import Details from "./pages/details/Details";
 
 // global state
 import { useGlobalContext } from "./context";
@@ -23,6 +24,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<Details />} />
       </Routes>
     </>
   );

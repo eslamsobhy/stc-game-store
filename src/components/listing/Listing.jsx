@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // icon
 import { FaChevronRight, FaStar } from "react-icons/fa";
@@ -24,7 +25,9 @@ const Listing = ({ title, products }) => {
                 <img src={prod.thumbnail} alt={prod.title} />
                 <div className="name">{prod.title}</div>
                 <div className="info">{prod.brand}</div>
-                <div className="btn">more info</div>
+                <Link to={`/details/${prod.id}`}>
+                  <div className="btn">more info</div>
+                </Link>
                 <div className="rating">
                   <FaStar color="var(--primary-color)" />
                   {prod.rating}
