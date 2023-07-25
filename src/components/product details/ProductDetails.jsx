@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // styling
 import "./product-details.scss";
@@ -17,6 +17,10 @@ const ProductDetails = ({ product }) => {
   if (loading) return <Loading />;
 
   const [prod] = product;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <section className="product-details">

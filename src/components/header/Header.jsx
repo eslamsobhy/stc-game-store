@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // styling
 import "./header.scss";
@@ -11,7 +12,9 @@ const Header = () => {
     <header>
       <section className="section header">
         <div className="logo">
-          <img src="/assets/logo.png" alt="" />
+          <Link to="/">
+            <img src="/assets/logo.png" alt="" />
+          </Link>
           <div className="title">Game Store</div>
         </div>
         <div className="actions">
