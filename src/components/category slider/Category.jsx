@@ -10,18 +10,27 @@ import "./category.scss";
 import { useGlobalContext } from "../../context";
 
 const Category = () => {
-  const { categories } = useGlobalContext();
+  const { categories, category, setCategory } = useGlobalContext();
 
   if (categories.length < 1) return;
 
   return (
     <section className="category">
-      <article className="item active" name="all">
+      <article
+        className={`item ${category === "all" ? "active" : ""}`}
+        name="all"
+        onClick={() => setCategory("all")}
+      >
         all <AiOutlineCheck />
       </article>
       {categories.map((cat, index) => {
         return (
-          <article className="item" name={cat} key={index}>
+          <article
+            className={`item ${category === cat ? "active" : ""}`}
+            name={cat}
+            key={index}
+            onClick={() => setCategory(cat)}
+          >
             {cat}
             <AiOutlineCheck />
           </article>

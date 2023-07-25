@@ -16,6 +16,8 @@ const reducer = (state, action) => {
         (prod) => prod.rating > 4.5
       );
       return { ...state, mostRecommended: mostRec, mostPopular: mostPop };
+    case "SET_CATEGORY":
+      return { ...state, category: action.payload };
     default:
       return state;
   }

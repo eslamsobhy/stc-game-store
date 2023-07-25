@@ -37,8 +37,15 @@ export const AppProvider = ({ children }) => {
     return state.products.products?.filter((prod) => prod.id == id);
   };
 
+  // set category
+  const setCategory = (cat) => {
+    dispatch({ type: "SET_CATEGORY", payload: cat });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state, fetchData, getProductById }}>
+    <AppContext.Provider
+      value={{ ...state, fetchData, getProductById, setCategory }}
+    >
       {children}
     </AppContext.Provider>
   );
