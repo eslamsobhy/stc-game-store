@@ -17,17 +17,19 @@ const reducer = (state, action) => {
       );
       return { ...state, mostRecommended: mostRec, mostPopular: mostPop };
     case "SET_CATEGORY":
+      return {
+        ...state,
+        category: action.payload,
+      };
+    case "FILTER_BY_CATEGORY":
       const newRecommended = state.products.products.filter(
         (prod) => prod.category === action.payload && prod.price < 500
       );
       const newPopular = state.products.products.filter(
         (prod) => prod.category === action.payload && prod.rating > 4.5
       );
-
-      console.log(newRecommended, newPopular);
       return {
         ...state,
-        category: action.payload,
         mostRecommended: newRecommended,
         mostPopular: newPopular,
       };

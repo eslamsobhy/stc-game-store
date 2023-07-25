@@ -39,6 +39,11 @@ export const AppProvider = ({ children }) => {
 
   // set category
   const setCategory = (cat) => {
+    if (cat === "all") {
+      dispatch({ type: "PREPARE_DATA" });
+    } else {
+      dispatch({ type: "FILTER_BY_CATEGORY", payload: cat });
+    }
     dispatch({ type: "SET_CATEGORY", payload: cat });
   };
 
