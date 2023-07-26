@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Components
 import Category from "../../components/category slider/Category";
@@ -10,6 +10,10 @@ import { useGlobalContext } from "../../context";
 
 const Home = () => {
   const { mostRecommended, mostPopular } = useGlobalContext();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <>
