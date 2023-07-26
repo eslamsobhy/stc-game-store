@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // styling
 import "./product-details.scss";
@@ -13,11 +13,12 @@ import { useGlobalContext } from "../../context";
 import Loading from "../loading/Loading";
 
 const ProductDetails = ({ product }) => {
+  const [isReadMoreOpen, setIsReadMoreOpen] = useState(false);
   const { loading } = useGlobalContext();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   if (loading) return <Loading />;
 
@@ -38,8 +39,27 @@ const ProductDetails = ({ product }) => {
             <IoStar />
             Rating: {prod.rating}
           </div>
+          <div className={`more ${isReadMoreOpen ? "open" : ""}`}>
+            <div>
+              <IoStar />
+              Brand: {prod.brand}
+            </div>
+            <div>
+              <IoStar />
+              Stock: {prod.stock}
+            </div>
+            <div>
+              <IoStar />
+              Price: {prod.price}$
+            </div>
+          </div>
         </div>
-        <div className="read-more">Read more</div>
+        <div
+          className="read-more"
+          onClick={() => setIsReadMoreOpen(!isReadMoreOpen)}
+        >
+          {isReadMoreOpen ? "Read less" : "Read more"}
+        </div>
       </div>
       {prod.rating > 4.5 && <div className="top-rated">Top rated</div>}
     </section>
