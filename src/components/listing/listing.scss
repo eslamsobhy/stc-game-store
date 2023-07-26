@@ -79,3 +79,12 @@
     }
   }
 }
+
+@media (max-width: 786px) {
+  .items {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+  }
+}

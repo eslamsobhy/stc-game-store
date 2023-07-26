@@ -10,7 +10,7 @@
   }
 
   .info {
-    padding-top: 20px;
+    padding: 20px 0;
 
     .name {
       font-weight: bold;
@@ -22,6 +22,20 @@
       margin-top: 20px;
       color: #9d9d9e;
       font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .featured {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+    }
+
+    .info {
+      padding: 20px;
     }
   }
 }

@@ -31,3 +31,9 @@ header {
     }
   }
 }
+
+@media (max-width: 830px) {
+  header {
+    padding: 0 10px;
+  }
+}

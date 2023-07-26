@@ -1,8 +1,8 @@
 .login {
   background-color: #fff;
-  width: 50%;
+  width: 40rem;
   position: absolute;
-  right: 20%;
+  right: 19%;
   top: -300px;
   z-index: 9999;
   padding: 20px;
@@ -74,5 +74,29 @@
   &.opened {
     top: 100px;
     opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .login {
+    right: 10%;
+  }
+}
+
+@media (max-width: 789px) {
+  .login {
+    width: 100%;
+    right: 0;
+  }
+}
+
+@media (max-width: 645px) {
+  .login {
+    form {
+      width: 100%;
+      .form-group {
+        width: 90%;
+      }
+    }
   }
 }

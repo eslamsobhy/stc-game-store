@@ -20,6 +20,12 @@ section.section {
   margin: auto;
 }
 
+@media (max-width: 795px) {
+  section.section {
+    width: 95%;
+  }
+}
+
 .btn {
   background-color: var(--btn-primary);
   color: #fff;
