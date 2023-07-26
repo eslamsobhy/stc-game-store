@@ -4,6 +4,7 @@ import "./App.css";
 
 // components
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 // Pages
 import Home from "./pages/home/Home";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/details/:id" element={<Details />} />
       </Routes>
+      <Footer />
     </>
   );
 }
