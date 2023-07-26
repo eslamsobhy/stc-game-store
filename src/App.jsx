@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 // Pages
 import Home from "./pages/home/Home";
 import Details from "./pages/details/Details";
+import Error from "./pages/error/Error";
 
 // global state
 import { useGlobalContext } from "./context";
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/details/:id" element={<Details />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </>

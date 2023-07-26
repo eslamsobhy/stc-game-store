@@ -1,0 +1,17 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+
+  .status {
+    font-size: 100px;
+    color: var(--primary-color);
+  }
+
+  .message {
+    font-size: 30px;
+    color: #aaa;
+  }
+}
